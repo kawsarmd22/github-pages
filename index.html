@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="উন্নত মানের নিউজ পোর্টাল">
+    <meta name="keywords" content="News, Politics, Sports, Economy, International">
+    <meta name="author" content="Your Name">
+    <title>উন্নত মানের নিউজ পোর্টাল</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+<style type="text/css" id="dcoder_stylesheet">/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #ff5722;
+}
+
+/* Header Styles */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: #ff5722;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ff5722;
+    border-radius: 5px;
+}
+
+/* Main Section Styles */
+main {
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#news-container .news-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+#news-container .news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+#search-section input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 80%;
+}
+
+#search-section button {
+    padding: 10px 15px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#poll-form label {
+    display: block;
+    margin: 10px 0;
+}
+
+#poll-form button {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#poll-results {
+    margin-top: 20px;
+}
+
+/* Login Section */
+#login-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-section input {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#login-section button {
+    padding: 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Map Section */
+#map-container iframe {
+    width: 100%;
+    border: 0;
+    height: 300px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contact-info p {
+    margin-bottom: 10px;
+}
+
+#social-links a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#social-links a:hover {
+    color: #ff5722;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    #news-container {
+        grid-template-columns: 1fr;
+    }
+
+    #search-section input {
+        width: 100%;
+    }
+}</style></head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>আমাদের পত্রিকা</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#national">জাতীয়</a></li>
+                    <li><a href="#international">আন্তর্জাতিক</a></li>
+                    <li><a href="#politics">রাজনীতি</a></li>
+                    <li><a href="#economy">অর্থনীতি</a></li>
+                    <li><a href="#sports">খেলাধুলা</a></li>
+                    <li><a href="#cartoons">কার্টুন</a></li>
+                    <li><a href="#district">জেলার সংবাদ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- News Categories -->
+        <section id="news-section">
+            <h2>সর্বশেষ সংবাদ</h2>
+            <div id="news-container">
+                <!-- News items will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Search Engine -->
+        <section id="search-section">
+            <h2>খুঁজুন আপনার সংবাদ</h2>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="খোঁজ করুন...">
+                <button type="submit">অনুসন্ধান</button>
+            </form>
+        </section>
+
+        <!-- Poll Section -->
+        <section id="poll-section">
+            <h2>ভোট জরিপ</h2>
+            <p>আজকের প্রশ্ন: <span id="poll-question">আপনি কি নতুন উন্নয়ন পরিকল্পনা সমর্থন করেন?</span></p>
+            <form id="poll-form">
+                <label><input type="radio" name="poll" value="yes"> হ্যাঁ</label>
+                <label><input type="radio" name="poll" value="no"> না</label>
+                <button type="submit">ভোট দিন</button>
+            </form>
+            <div id="poll-results">
+                <!-- Poll results will display here -->
+            </div>
+        </section>
+
+        <!-- Reporter Login -->
+        <section id="login-section">
+            <h2>রিপোর্টার লগইন</h2>
+            <form id="login-form">
+                <input type="text" placeholder="ইমেইল" required>
+                <input type="password" placeholder="পাসওয়ার্ড" required>
+                <button type="submit">লগইন</button>
+            </form>
+            <p>নতুন? <a href="#register">রেজিস্ট্রেশন করুন</a></p>
+        </section>
+
+        <!-- Map Section -->
+        <section id="map-section">
+            <h2>বিশ্বের মানচিত্র</h2>
+            <div id="map-container">
+                <!-- Google Map Integration -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509414!2d144.955431315318!3d-37.81720997975199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d37d5e4abbb8!2sVictoria%20Street!5e0!3m2!1sen!2sbd!4v1623456238461!5m2!1sen!2sbd" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div id="contact-info">
+                <p>সম্পাদকের কথা | ঠিকানা: ঢাকা, বাংলাদেশ | ইমেইল: example@news.com</p>
+                <p>যোগাযোগ | শর্তাবলী</p>
+            </div>
+            <div id="social-links">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://youtube.com" target="_blank">YouTube</a>
+                <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="text/javascript" id="dcoder_script">// News section dynamic content
+document.addEventListener('DOMContentLoaded', function() {
+    const newsData = [
+        {
+            title: "জাতীয় সংবাদ ১",
+            description: "এটি একটি উদাহরণ জাতীয় সংবাদ। আরও বিস্তারিত জানতে ক্লিক করুন।",
+            link: "#"
+        },
+        {
+            title: "আন্তর্জাতিক সংবাদ ২",
+            description: "এটি একটি উদাহরণ আন্তর্জাতিক সংবাদ। আরও বিস্তারিত জানতে ক্লিক করুন।",
+            link: "#"
+        },
+        {
+            title: "রাজনীতি সংবাদ ৩",
+            description: "এটি একটি উদাহরণ রাজনীতি সংবাদ। আরও বিস্তারিত জানতে ক্লিক করুন।",
+            link: "#"
+        },
+        {
+            title: "অর্থনীতি সংবাদ ৪",
+            description: "এটি একটি উদাহরণ অর্থনীতি সংবাদ। আরও বিস্তারিত জানতে ক্লিক করুন।",
+            link: "#"
+        },
+        {
+            title: "খেলাধুলা সংবাদ ৫",
+            description: "এটি একটি উদাহরণ খেলাধুলা সংবাদ। আরও বিস্তারিত জানতে ক্লিক করুন।",
+            link: "#"
+        }
+    ];
+
+    const newsContainer = document.getElementById('news-container');
+    newsData.forEach(item => {
+        const newsItem = document.createElement('div');
+        newsItem.classList.add('news-item');
+        newsItem.innerHTML = `
+            <h3><a href="${item.link}">${item.title}</a></h3>
+            <p>${item.description}</p>
+        `;
+        newsContainer.appendChild(newsItem);
+    });
+});
+
+// Search Functionality
+document.getElementById('search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
+    if (searchTerm) {
+        alert(`আপনি খুঁজছেন: ${searchTerm}`);
+    } else {
+        alert("অনুগ্রহ করে কিছু লিখুন!");
+    }
+});
+
+// Poll Functionality
+const pollForm = document.getElementById('poll-form');
+pollForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const pollResult = document.querySelector('input[name="poll"]:checked');
+    if (pollResult) {
+        const answer = pollResult.value;
+        document.getElementById('poll-results').innerHTML = `
+            <p>আপনার ভোট: ${answer === 'yes' ? 'হ্যাঁ' : 'না'}</p>
+        `;
+    } else {
+        alert("অনুগ্রহ করে একটি উত্তর দিন!");
+    }
+});
+
+// Login Form Handling
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+    
+    if (email === "admin@news.com" && password === "password123") {
+        alert("লগইন সফল!");
+        // Redirect to the reporter dashboard (for example)
+        window.location.href = "#";
+    } else {
+        alert("ইমেইল বা পাসওয়ার্ড সঠিক নয়।");
+    }
+});
+
+// Show and Hide Password functionality
+const passwordInput = document.querySelector('#login-form input[type="password"]');
+const showPasswordBtn = document.createElement('button');
+showPasswordBtn.textContent = 'পাসওয়ার্ড দেখান';
+showPasswordBtn.type = 'button';
+showPasswordBtn.style.marginTop = '10px';
+passwordInput.parentElement.appendChild(showPasswordBtn);
+
+showPasswordBtn.addEventListener('click', function() {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        showPasswordBtn.textContent = 'পাসওয়ার্ড লুকান';
+    } else {
+        passwordInput.type = 'password';
+        showPasswordBtn.textContent = 'পাসওয়ার্ড দেখান';
+    }
+});
+
+// Responsive behavior for mobile navigation
+const navLinks = document.querySelectorAll('.nav-menu li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('active');
+    });
+});
+
+// Google Maps Customization
+const mapContainer = document.getElementById('map-container');
+mapContainer.addEventListener('mouseover', function() {
+    mapContainer.style.opacity = '0.8';
+});
+mapContainer.addEventListener('mouseout', function() {
+    mapContainer.style.opacity = '1';
+});</script></body></html>
