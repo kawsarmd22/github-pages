@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Admin Panel</title> 
+  <link rel="stylesheet" href="admin-style.css"> 
+ <style type="text/css" id="dcoder_stylesheet">/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7fc;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    height: 100vh;
+    padding-top: 30px;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px;
+    text-align: left;
+}
+
+.sidebar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #007bff;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#dynamic-time {
+    font-size: 1.2rem;
+}
+
+/* Sections */
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #f1f1f1;
+}
+
+/* Buttons */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+button.edit-btn {
+    background-color: #ffc107;
+}
+
+button.delete-btn {
+    background-color: #dc3545;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 100px;
+    font-size: 1rem;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}</style></head> 
+ <body> <!-- Sidebar --> 
+  <div class="sidebar"> 
+   <div class="sidebar-header"> 
+    <h2>Admin Panel</h2> 
+   </div> 
+   <ul class="sidebar-menu"> 
+    <li><a href="#dashboard">Dashboard</a></li> 
+    <li><a href="#members">Manage Members</a></li> 
+    <li><a href="#themes">Theme Settings</a></li> 
+    <li><a href="#content">Manage Content</a></li> 
+    <li><a href="#logout" id="logout">Logout</a></li> 
+   </ul> 
+  </div> <!-- Main Content --> 
+  <div class="main-content"> 
+   <header> 
+    <h1>Welcome, Admin</h1> 
+    <div id="dynamic-time"></div> 
+   </header> <!-- Dashboard Section --> 
+   <section id="dashboard"> 
+    <h2>Dashboard</h2> 
+    <p>Overview of your website's activity and data.</p> 
+   </section> <!-- Manage Members --> 
+   <section id="members"> 
+    <h2>Member List</h2> 
+    <table> 
+     <thead> 
+      <tr> 
+       <th>Name</th> 
+       <th>Email</th> 
+       <th>Phone</th> 
+       <th>Actions</th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr> 
+       <td>John Doe</td> 
+       <td>john@example.com</td> 
+       <td>+123456789</td> 
+       <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td> 
+      </tr> 
+      <tr> 
+       <td>Jane Smith</td> 
+       <td>jane@example.com</td> 
+       <td>+987654321</td> 
+       <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </section> <!-- Theme Settings --> 
+   <section id="themes"> 
+    <h2>Theme Settings</h2> <button id="change-theme">Change Theme</button> 
+   </section> <!-- Content Management --> 
+   <section id="content"> 
+    <h2>Manage Website Content</h2> <textarea id="content-area" placeholder="Enter new content here..."></textarea> <button id="save-content">Save Content</button> 
+   </section> 
+  </div> 
+  <script src="admin-script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">// Dynamic Time
+function updateTime() {
+    const dynamicTime = document.getElementById("dynamic-time");
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    dynamicTime.textContent = `Current Time: ${time}`;
+}
+setInterval(updateTime, 1000);
+
+// Logout Action
+document.getElementById("logout").addEventListener("click", function() {
+    alert("Logged out successfully!");
+    // Redirect to login page
+    window.location.href = "login.html";
+});
+
+// Theme Switcher
+let currentTheme = "light";
+document.getElementById("change-theme").addEventListener("click", function() {
+    if (currentTheme === "light") {
+        document.body.style.backgroundColor = "#2c3e50";
+        document.body.style.color = "#ecf0f1";
+        currentTheme = "dark";
+    } else {
+        document.body.style.backgroundColor = "#f4f7fc";
+        document.body.style.color = "#333";
+        currentTheme = "light";
+    }
+});
+
+// Save Content
+document.getElementById("save-content").addEventListener("click", function() {
+    const content = document.getElementById("content-area").value;
+    if (content.trim() === "") {
+        alert("Content cannot be empty!");
+    } else {
+        alert("Content saved successfully!");
+        // Here you can save content to your database or backend
+    }
+});</script></body></html>
